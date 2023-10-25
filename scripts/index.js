@@ -42,23 +42,35 @@ function transferir() {
     const monto = parseFloat(prompt(`Ingrese la cantidad a transferir:`))
     if (isNaN(monto) || monto <= 0 || monto > saldo) {
         console.log(`Cantidad inválida o insuficiente. Intente de nuevo.`)
-    }else{
+    } else {
         const cuentaDestino = prompt(`Ingrese el numero de cuenta de destino:`)
         // isValidStructureIBAN(cuentaDestino);
         console.log(`se han transferido ${monto.toFixed(2)}€`);
-        saldo-=monto;
+        saldo -= monto;
         mostrarSaldo();
     }
 }
 function iniciarSesion() { //esto seria nuestro inicio por lo evidente.
-
+    let pin = prompt(`Ingrese su PIN:`);
+    while (pin !== PIN_CORRECTO && intentosRestantes > 1) {
+        intentosRestantes--;
+        console.log(`Pin incorrecto te quedan ${intentosRestantes} intentos`);
+        pin = prompt(`Ingrese su PIN:`);
+    }
+    if (pin === PIN_CORRECTO) {
+        console.log(`Inicio de sesión existoso`);
+        console.log(`Tu saldo es de: ${saldo}€`);
+        operacionesCajero();
+    } else {
+        console.log(`PIN incorrecto. El cajero se ha bloqueado.`)
+    }
 }
 function operacionesCajero() { //esto seria el menu.
 
 }
 
 // function isValidStructureIBAN(cuenta_a_validar){
-    // return /[a-zA-Z]{2}[0-9]{20}$/g.test(strValue);
+// return /[a-zA-Z]{2}[0-9]{20}$/g.test(strValue);
 // }
 
 iniciarSesion();
