@@ -38,7 +38,17 @@ function retirar() {
     }
 }
 function transferir() {
-
+    //monto es una cantidad de dinero con la que vamos hacer movimientos
+    const monto = parseFloat(prompt(`Ingrese la cantidad a transferir:`))
+    if (isNaN(monto) || monto <= 0 || monto > saldo) {
+        console.log(`Cantidad inválida o insuficiente. Intente de nuevo.`)
+    }else{
+        const cuentaDestino = prompt(`Ingrese el numero de cuenta de destino:`)
+        // isValidStructureIBAN(cuentaDestino);
+        console.log(`se han transferido ${monto.toFixed(2)}€`);
+        saldo-=monto;
+        mostrarSaldo();
+    }
 }
 function iniciarSesion() { //esto seria nuestro inicio por lo evidente.
 
@@ -47,7 +57,12 @@ function operacionesCajero() { //esto seria el menu.
 
 }
 
+// function isValidStructureIBAN(cuenta_a_validar){
+    // return /[a-zA-Z]{2}[0-9]{20}$/g.test(strValue);
+// }
+
 iniciarSesion();
 mostrarSaldo();
 depositarSaldo();
 retirar();
+transferir();
