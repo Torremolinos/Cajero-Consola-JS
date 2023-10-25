@@ -76,7 +76,7 @@ function operacionesCajero() { //esto seria el menu.
         console.log(`3. Retirar dinero:`);
         console.log(`4. Transferir dinero:`);
         console.log(`5. Salir`);
-        const opcion = prompt(`Por favor, elija  una opcion:`);
+        const opcion = prompt(`Por favor, elija  una opcion:\nMenú del cajero\n1. Consultar saldo:\n2. Depositar saldo:\n3. Retirar dinero:\n4. Transferir\n5. Salir`);
         switch (opcion) {
             case "1":
                 mostrarSaldo();
