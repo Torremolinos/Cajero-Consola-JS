@@ -69,37 +69,38 @@ function operacionesCajero() { //esto seria el menu.
     //para mostrar un menu necesitamos una variable que no es constante
     let continuar = true;
 
-    while (continuar){//aqui si pones true es lo mismo que poner continuar.
-     console.log(`Menú del cajero:`);
-     console.log(`1. Consultar saldo:`);
-     console.log(`2. Depositar saldo:`);
-     console.log(`3. Retirar dinero:`);
-     console.log(`4. Transferir dinero:`);
-     console.log(`5. Salir`);
+    while (continuar) {//aqui si pones true es lo mismo que poner continuar.
+        console.log(`Menú del cajero:`);
+        console.log(`1. Consultar saldo:`);
+        console.log(`2. Depositar saldo:`);
+        console.log(`3. Retirar dinero:`);
+        console.log(`4. Transferir dinero:`);
+        console.log(`5. Salir`);
         const opcion = prompt(`Por favor, elija  una opcion:`);
         switch (opcion) {
-            case 1:
+            case "1":
                 mostrarSaldo();
                 break;
-        
-            case 2:
+
+            case "2":
                 depositarSaldo();
                 break;
-        
-            case 3:
+
+            case "3":
                 retirar();
                 break;
-        
-            case 4:
+
+            case "4":
                 transferir();
                 break;
-        
-            case 5:
+
+            case "5":
                 console.log(`Saliendo del programa....`)
                 continuar = false;
                 break;
-        
+
             default:
+                console.log(`Opción equivocada.`)
                 break;
         }
     }
@@ -114,3 +115,4 @@ function operacionesCajero() { //esto seria el menu.
 // depositarSaldo();
 // retirar();
 // transferir();
+operacionesCajero();
