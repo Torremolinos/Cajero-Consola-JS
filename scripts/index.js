@@ -1,6 +1,6 @@
 /**
  * @Autor: Adrian Iglesias Riño (Estudiante)
- * @github:
+ * @github:https://github.com/Torremolinos/Cajero-Consola-JS
  */
 /*  <!--funcionalidades del cajero, *depositar(), *retirar(), *transferir(), *iniciar sesion(), *operaciones del Cajero()-->*/
 
