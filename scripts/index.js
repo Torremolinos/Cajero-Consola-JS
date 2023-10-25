@@ -66,15 +66,51 @@ function iniciarSesion() { //esto seria nuestro inicio por lo evidente.
     }
 }
 function operacionesCajero() { //esto seria el menu.
+    //para mostrar un menu necesitamos una variable que no es constante
+    let continuar = true;
 
+    while (continuar){//aqui si pones true es lo mismo que poner continuar.
+     console.log(`Menú del cajero:`);
+     console.log(`1. Consultar saldo:`);
+     console.log(`2. Depositar saldo:`);
+     console.log(`3. Retirar dinero:`);
+     console.log(`4. Transferir dinero:`);
+     console.log(`5. Salir`);
+        const opcion = prompt(`Por favor, elija  una opcion:`);
+        switch (opcion) {
+            case 1:
+                mostrarSaldo();
+                break;
+        
+            case 2:
+                depositarSaldo();
+                break;
+        
+            case 3:
+                retirar();
+                break;
+        
+            case 4:
+                transferir();
+                break;
+        
+            case 5:
+                console.log(`Saliendo del programa....`)
+                continuar = false;
+                break;
+        
+            default:
+                break;
+        }
+    }
 }
 
 // function isValidStructureIBAN(cuenta_a_validar){
 // return /[a-zA-Z]{2}[0-9]{20}$/g.test(strValue);
 // }
 
-iniciarSesion();
-mostrarSaldo();
-depositarSaldo();
-retirar();
-transferir();
+// iniciarSesion();
+// mostrarSaldo();
+// depositarSaldo();
+// retirar();
+// transferir();
