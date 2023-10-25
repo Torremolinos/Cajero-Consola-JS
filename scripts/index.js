@@ -13,13 +13,29 @@ const PIN_CORRECTO = "1234"; //lo mismo que la de arriba.
 let intentosRestantes = 3;
 
 function mostrarSaldo() {
-
+    console.log(`Su saldo actual es ${saldo.toFixed(2)} €`);
 }
 function depositarSaldo() {
-
+    const deposito = parseFloat(prompt("Ingrese la cantidad a depositar"));
+    if (isNaN(deposito) || deposito <= 0) {
+        console.log(`Cantidad inválida. Intente de nuevo`);
+    } else {
+        saldo += deposito;
+        //ahora imprimo el saldo depositado 
+        console.log(`Saldo depositado ${deposito.toFixed(2)}€`);
+        //despues el saldo actual.
+        mostrarSaldo();
+    }
 }
 function retirar() {
-
+    const retiro = parseFloat(prompt("Ingresa la cantidad a retirar"));
+    if (isNaN(retiro) || retiro <= 0 || retiro > saldo) {
+        console.log(`Cantidad inválida. Intente de nuevo`);
+    } else {
+        saldo -= retiro;
+        console.log(`Saldo retirado ${retiro.toFixed(2)}€`);
+        mostrarSaldo();
+    }
 }
 function transferir() {
 
@@ -29,5 +45,9 @@ function iniciarSesion() { //esto seria nuestro inicio por lo evidente.
 }
 function operacionesCajero() { //esto seria el menu.
 
-} 
+}
 
+iniciarSesion();
+mostrarSaldo();
+depositarSaldo();
+retirar();
